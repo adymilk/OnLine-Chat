@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MingChatRoom - MING群聊网页版</title>
+	<meta charset="utf-8">
+	<meta name="keywords" content="网页聊天，在线群聊，MING群聊，websocket，nodejs在线聊天"/>
+	<meta name="description" content="MingChatRoom，是MING群聊网页版，使用nodejs的socket.io包，采用长连接的方式推送消息" />
+	<link rel="stylesheet" href="styles/stylesheets/index.css" />
+	<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+	<script src="/js/chat.js"></script>
+	<script src="/js/jquery.cookie.js"></script>
+</head>
+<body>
+	<div class="setName">
+		<div class="setBox">
+		<h1>MingChatRoom<small> - MING群聊网页版</small></h1>
+		<p>加入聊天只需一步！</p>
+		<input type="text" class="inputName" placeholder="请输入3-12位昵称"/>
+		<a href="javascript:;" class="btn btn-blue set">加入聊天</a>
+		<a href="javascript:;" class="btn btn-red close">匿名进入</a>
+		</div>
+	</div>
+	<div class="mask">
+		<p>明明君正在努力连接服务器...</p>
+	</div>
+	<div class="top">
+		<div class="logo">
+			<h1>MingChatRoom <small>MING群聊网页版</small></h1>
+		</div>
+	</div>
+	<!-- 群聊 -->
+	<div class="msgbox cl">
+		<div class="left">
+			<ul class="msglist">
+				<li class="admin">
+					<p class="name"><img src="./styles/images/logo.png" alt="管理员" width="40px" height="40px" align="center"><span>[浙江·杭州] [最强王者] 明明君</span><span>2015-11-09 09:57:08</span></p>
+					<div class="content">
+						Hello！欢迎登录！在下明明君，有什么事情跟大家交流吧。
+					</div>
+				</li>
+			</ul>
+			<div class="toolbar">
+				<div class="expressionBox hide"></div>
+				<div class="bgBox hide"></div>
+				<input type="color" value="color" class="colorBox" /><a href="javascript:;" class="changeWordColor">文字颜色</a>
+				<a href="javascript:;" class="addLook">添加表情</a>
+				<a href="javascript:;" class="changebg">切换背景</a>
+			</div>
+			<div class="editor">
+				<textarea id="chat-content" placeholder="和大伙说点儿什么吧，enter键可发送消息哦..."></textarea>
+				<a href="javascript:;" class="send btn btn-blue" title="enter键发送">发送</a>
+			</div>
+		</div>
+		<div class="right">
+			<div class="info-me">
+				<img src="./styles/images/logo.png" id="avatar" width="90px" height="90px" alt="头像">
+				<p>[昵称] : <span class="chatName"></span></p>
+				<p>[等级] : <span class="level"></span></p>
+				<p>[地点] : <span class="address"></span></p>
+				<!-- <p>[上次登录] : 2015-11-09 10:39:30</p> -->
+			</div>
+			<ul class="people">
+				<li class="on">&gt;在线网友 [<small class="onlineNum"></small>人]</li>
+				<ul class="onlist"></ul>
+				<!-- <li class="off">&gt;离线人员 [10人]</li>
+				<ul class="offlist">
+					<li>JmingZI <span>[15/11/09 10:22:48]</span></li>
+					<li>JmingZI <span>[15/11/09 10:22:48]</span></li>
+					<li>JmingZI <span>[15/11/09 10:22:48]</span></li>
+					<li>JmingZI <span>[15/11/09 10:22:48]</span></li>
+				</ul> -->
+			</ul>
+		</div>
+	</div>
+	<!-- 版权 -->
+	<div class="copy">
+		&copy; 2015-11-09 JMingZI 版权所有. <a href="https://github.com/JMingZI/webchat" target="_blank">GIT地址</a> | <a href="http://ymblog.net" target="_blank">我的博客</a> | <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256777761'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1256777761%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+	</div>
+</body>
+</html>
